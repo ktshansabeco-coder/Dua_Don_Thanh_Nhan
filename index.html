@@ -87,6 +87,7 @@
             border-radius: 50px;
             box-shadow: 0 4px 15px rgba(210, 105, 30, 0.4);
             transition: transform 0.3s, background-color 0.3s;
+            display: inline-block;
         }
         .btn-cta:hover {
             background-color: var(--primary);
@@ -186,8 +187,17 @@
         }
         .contact-box p {
             font-size: 1.1rem;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+        .address-highlight {
+            background: rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 8px;
             margin-bottom: 25px;
-            opacity: 0.9;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
         .contact-buttons {
             display: flex;
@@ -225,10 +235,11 @@
         }
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 30px 20px;
             background: #222;
-            color: #aaa;
-            font-size: 0.9rem;
+            color: #ddd;
+            font-size: 0.95rem;
+            line-height: 1.8;
         }
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
@@ -285,7 +296,7 @@
                     </div>
                     <div>
                         <div class="price">Liên hệ: 0905 876 567</div>
-                        <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="padding: 10px 24px; font-size: 0.95rem; display: inline-block;">Đặt Mua Qua Zalo</a>
+                        <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="padding: 10px 24px; font-size: 0.95rem;">Đặt Mua Qua Zalo</a>
                     </div>
                 </div>
             </div>
@@ -299,7 +310,7 @@
                     </div>
                     <div>
                         <div class="price">Liên hệ: 0905 876 567</div>
-                        <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="padding: 10px 24px; font-size: 0.95rem; display: inline-block;">Đặt Mua Qua Zalo</a>
+                        <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="padding: 10px 24px; font-size: 0.95rem;">Đặt Mua Qua Zalo</a>
                     </div>
                 </div>
             </div>
@@ -313,7 +324,7 @@
                     </div>
                     <div>
                         <div class="price">Giá Sỉ Ưu Đãi</div>
-                        <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="padding: 10px 24px; font-size: 0.95rem; display: inline-block;">Nhận Báo Giá Sỉ</a>
+                        <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="padding: 10px 24px; font-size: 0.95rem;">Nhận Báo Giá Sỉ</a>
                     </div>
                 </div>
             </div>
@@ -323,10 +334,14 @@
     <div class="container" id="lien-he">
         <div class="contact-box">
             <h2>Đặt Hàng & Hợp Tác Đại Lý</h2>
-            <p>Quý khách hàng có nhu cầu mua lẻ hoặc nhập sỉ số lượng lớn vui lòng liên hệ trực tiếp Hotline hoặc Zalo để được phục vụ nhanh nhất!</p>
+            <p>Quý khách hàng có nhu cầu mua lẻ hoặc nhập sỉ số lượng lớn vui lòng liên hệ trực tiếp hoặc ghé tại cơ sở:</p>
+            <div class="address-highlight">
+                📍 Địa chỉ: 416/2 Nguyễn Trãi, Phường Nghĩa Lộ, TP. Quảng Ngãi
+            </div>
             <div class="contact-buttons">
                 <a href="tel:0905876567" class="btn-cta" style="background: #ffffff; color: var(--primary);">📞 GỌI: 0905 876 567</a>
                 <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="background: #0068FF; color: #ffffff;">💬 ZALO: 0905 876 567</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=416/2+Nguyễn+Trãi,+Nghĩa+Lộ,+Quảng+Ngãi" target="_blank" class="btn-cta" style="background: var(--accent); color: #ffffff;">🗺️ XEM BẢN ĐỒ</a>
             </div>
         </div>
     </div>
@@ -337,7 +352,9 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Thương hiệu Dừa Dòn Thành Nhân - Hotline/Zalo: 0905 876 567. Giữ trọn hương vị tự nhiên.</p>
+        <p><strong>THƯƠNG HIỆU DỪA DÒN THÀNH NHÂN</strong></p>
+        <p>📍 Địa chỉ: 416/2 Nguyễn Trãi, Nghĩa Lộ, Quảng Ngãi | 📞 Hotline / Zalo: 0905 876 567</p>
+        <p>&copy; 2026 Dừa Dòn Thành Nhân. Giữ trọn hương vị tự nhiên.</p>
     </footer>
 
 </body>
