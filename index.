@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dừa Dòn Thành Nhân - Giòn Rụm, Thơm Béo Tự Nhiên</title>
+    <style>
+        :root {
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #2E7D32;
+            --light-bg: #FFFDF9;
+            --text: #333333;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--light-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-links a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        .hero {
+            background: linear-gradient(rgba(60, 30, 10, 0.65), rgba(60, 30, 10, 0.65)), 
+                        url('1778065814837_1942917636061203901_4848677422044637954_f9b077a393212a99a2a4737285bff61f.jpg') center/cover no-repeat;
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 40px 20px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+        }
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 650px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+        }
+        .btn-cta {
+            background-color: var(--secondary);
+            color: #ffffff;
+            padding: 14px 36px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(210, 105, 30, 0.4);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .btn-cta:hover {
+            background-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        .container {
+            max-width: 1150px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 45px auto;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+        .feature-box {
+            background: #ffffff;
+            padding: 30px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--secondary);
+        }
+        .feature-box h3 {
+            color: var(--primary);
+            margin: 15px 0 10px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: #ffffff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+        }
+        .product-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 24px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-info h3 {
+            color: var(--primary);
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+        }
+        .product-info p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        .price {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+        .contact-box {
+            background: linear-gradient(135deg, var(--primary), #5c2c0c);
+            color: #ffffff;
+            border-radius: 16px;
+            padding: 50px 30px;
+            text-align: center;
+        }
+        .contact-box h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .contact-box p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .floating-contact {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 999;
+        }
+        .float-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+        .float-btn:hover {
+            transform: scale(1.05);
+        }
+        .float-btn.zalo {
+            background-color: #0068FF;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #222;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">🥥 DỪA DÒN THÀNH NHÂN</a>
+        <nav class="nav-links">
+            <a href="#gioi-thieu">Điểm Khác Biệt</a>
+            <a href="#san-pham">Sản Phẩm</a>
+            <a href="#lien-he">Đặt Hàng Sỉ & Lẻ</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>DỪA DÒN THÀNH NHÂN</h1>
+        <p>Tinh hoa quà Việt – Từng lát dừa vàng ươm, giòn rụm, giữ trọn vị ngọt thanh và hương thơm béo tự nhiên.</p>
+        <a href="tel:0905876567" class="btn-cta">📞 GỌI ĐẶT HÀNG: 0905 876 567</a>
+    </section>
+
+    <div class="container" id="gioi-thieu">
+        <h2 class="section-title">Vì Sao Chọn Dừa Dòn Thành Nhân?</h2>
+        <p class="section-subtitle">Chế biến tỉ mỉ từ những trái dừa tuyển chọn, mang đến món ăn vặt lành mạnh và đậm đà hương vị truyền thống.</p>
+        
+        <div class="features">
+            <div class="feature-box">
+                <h3>🥥 Nguyên Liệu Chọn Lọc</h3>
+                <p>Sử dụng cơm dừa tươi đủ độ già để đạt độ béo ngậy tự nhiên và cấu trúc giòn tan hoàn hảo sau khi sấy.</p>
+            </div>
+            <div class="feature-box">
+                <h3>🔥 Công Nghệ Sấy Giòn</h3>
+                <p>Nướng sấy ở nhiệt độ tiêu chuẩn giúp miếng dừa vàng đều, dậy mùi thơm đặc trưng mà không bị gắt dầu.</p>
+            </div>
+            <div class="feature-box">
+                <h3>🛡️ An Toàn & Tự Nhiên</h3>
+                <p>Không phẩm màu hóa học, không chất bảo quản độc hại, đảm bảo an toàn vệ sinh thực phẩm cho cả gia đình.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="san-pham">Sản Phẩm Nổi Bật</h2>
+        <p class="section-subtitle">Đa dạng quy cách đóng gói, phù hợp dùng hàng ngày, đãi khách hoặc làm quà biếu tặng ý nghĩa.</p>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="1778065814837_1942917636061203901_4848677422044637954_f9b077a393212a99a2a4737285bff61f.jpg" alt="Dừa Dòn Truyền Thống">
+                <div class="product-info">
+                    <div>
+                        <h3>Dừa Dòn Truyền Thống</h3>
+                        <p>Lát dừa sấy giòn rụm nguyên bản, vị ngọt dịu nhẹ, nhâm nhi cùng trà nóng hoặc cà phê cực kỳ bắt vị.</p>
+                    </div>
+                    <div>
+                        <div class="price">Liên hệ: 0905 876 567</div>
+                        <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="padding: 10px 24px; font-size: 0.95rem; display: inline-block;">Đặt Mua Qua Zalo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="1778065814979_1942917636061203901_4848677422044637954_2b4d11b2f546d03458e22801d496332c.jpg" alt="Dừa Dòn Đóng Gói Tiện Lợi">
+                <div class="product-info">
+                    <div>
+                        <h3>Dừa Dòn Hũ / Túi Zip</h3>
+                        <p>Đóng gói kín hơi giúp giữ trọn độ giòn lâu dài, tiện lợi mang theo đi làm, du lịch hay dã ngoại.</p>
+                    </div>
+                    <div>
+                        <div class="price">Liên hệ: 0905 876 567</div>
+                        <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="padding: 10px 24px; font-size: 0.95rem; display: inline-block;">Đặt Mua Qua Zalo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images.jfif" alt="Combo Quà Biếu Dừa Dòn Thành Nhân">
+                <div class="product-info">
+                    <div>
+                        <h3>Combo Quà Tặng & Sỉ Đại Lý</h3>
+                        <p>Tuyển đại lý, nhà phân phối và cung cấp số lượng lớn làm quà tặng doanh nghiệp, lễ Tết với chiết khấu cao.</p>
+                    </div>
+                    <div>
+                        <div class="price">Giá Sỉ Ưu Đãi</div>
+                        <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="padding: 10px 24px; font-size: 0.95rem; display: inline-block;">Nhận Báo Giá Sỉ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="lien-he">
+        <div class="contact-box">
+            <h2>Đặt Hàng & Hợp Tác Đại Lý</h2>
+            <p>Quý khách hàng có nhu cầu mua lẻ hoặc nhập sỉ số lượng lớn vui lòng liên hệ trực tiếp Hotline hoặc Zalo để được phục vụ nhanh nhất!</p>
+            <div class="contact-buttons">
+                <a href="tel:0905876567" class="btn-cta" style="background: #ffffff; color: var(--primary);">📞 GỌI: 0905 876 567</a>
+                <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="background: #0068FF; color: #ffffff;">💬 ZALO: 0905 876 567</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="floating-contact">
+        <a href="https://zalo.me/0905876567" target="_blank" class="float-btn zalo">💬 Zalo: 0905.876.567</a>
+        <a href="tel:0905876567" class="float-btn">📞 Gọi: 0905.876.567</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Thương hiệu Dừa Dòn Thành Nhân - Hotline/Zalo: 0905 876 567. Giữ trọn hương vị tự nhiên.</p>
+    </footer>
+
+</body>
+</html>
