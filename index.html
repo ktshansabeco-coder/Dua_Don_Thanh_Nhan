@@ -1,361 +1,178 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dừa Dòn Thành Nhân - Giòn Rụm, Thơm Béo Tự Nhiên</title>
-    <style>
-        :root {
-            --primary: #8B4513;
-            --secondary: #D2691E;
-            --accent: #2E7D32;
-            --light-bg: #FFFDF9;
-            --text: #333333;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-        body {
-            background-color: var(--light-bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .nav-links a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-        .hero {
-            background: linear-gradient(rgba(60, 30, 10, 0.65), rgba(60, 30, 10, 0.65)), 
-                        url('1778065814837_1942917636061203901_4848677422044637954_f9b077a393212a99a2a4737285bff61f.jpg') center/cover no-repeat;
-            min-height: 75vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #ffffff;
-            padding: 40px 20px;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-        }
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 650px;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-        }
-        .btn-cta {
-            background-color: var(--secondary);
-            color: #ffffff;
-            padding: 14px 36px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(210, 105, 30, 0.4);
-            transition: transform 0.3s, background-color 0.3s;
-            display: inline-block;
-        }
-        .btn-cta:hover {
-            background-color: var(--primary);
-            transform: translateY(-2px);
-        }
-        .container {
-            max-width: 1150px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 45px auto;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
-        }
-        .feature-box {
-            background: #ffffff;
-            padding: 30px 25px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border-bottom: 4px solid var(--secondary);
-        }
-        .feature-box h3 {
-            color: var(--primary);
-            margin: 15px 0 10px;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .product-card {
-            background: #ffffff;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .product-card:hover {
-            transform: translateY(-6px);
-        }
-        .product-card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-        }
-        .product-info {
-            padding: 24px;
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .product-info h3 {
-            color: var(--primary);
-            font-size: 1.35rem;
-            margin-bottom: 10px;
-        }
-        .product-info p {
-            color: #555;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-        .price {
-            font-size: 1.25rem;
-            color: var(--accent);
-            font-weight: 800;
-            margin-bottom: 18px;
-        }
-        .contact-box {
-            background: linear-gradient(135deg, var(--primary), #5c2c0c);
-            color: #ffffff;
-            border-radius: 16px;
-            padding: 50px 30px;
-            text-align: center;
-        }
-        .contact-box h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        .contact-box p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            opacity: 0.95;
-        }
-        .address-highlight {
-            background: rgba(255, 255, 255, 0.15);
-            display: inline-block;
-            padding: 10px 22px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .floating-contact {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            z-index: 999;
-        }
-        .float-btn {
-            background-color: var(--accent);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: transform 0.2s;
-        }
-        .float-btn:hover {
-            transform: scale(1.05);
-        }
-        .float-btn.zalo {
-            background-color: #0068FF;
-        }
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            background: #222;
-            color: #ddd;
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .nav-links { display: none; }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dừa Dòn Thành Nhân – Giòn Rụm Từng Miếng, Bùi Béo Vị Dừa Quê</title>
+<meta name="description" content="Dừa dòn Thành Nhân: dừa sấy giòn từ cơm dừa chọn lọc và đường. Gói 250gr 32.000₫, gói 500gr 60.000₫. Giao toàn quốc, kiểm tra hàng trước khi thanh toán.">
+<meta property="og:type" content="product">
+<meta property="og:title" content="Dừa Dòn Thành Nhân – Giòn Rụm Từng Miếng">
+<meta property="og:description" content="Dừa sấy giòn truyền thống, ăn trực tiếp hoặc làm topping. Giao toàn quốc.">
+<meta property="og:image" content="assets/images/hero-dua-don-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Dừa Dòn Thành Nhân","brand":{"@type":"Brand","name":"Thành Nhân"},"description":"Dừa sấy giòn từ cơm dừa chọn lọc và đường.","image":"assets/images/hero-dua-don-1.jpg","offers":{"@type":"AggregateOffer","priceCurrency":"VND","lowPrice":"32000","highPrice":"60000","offerCount":"2","availability":"https://schema.org/InStock"}}
+</script>
 </head>
 <body>
+<div class="topbar">Giao hàng toàn quốc • Kiểm tra hàng trước khi thanh toán • Tư vấn &amp; đặt sỉ/lẻ: <b data-cfg="phone"></b></div>
+<header class="header">
+  <a class="logo" href="#top">Dừa Dòn <span>Thành Nhân</span></a>
+  <nav id="nav">
+    <a href="#top">Sản Phẩm Chính</a><a href="#huong-vi">Hương Vị &amp; Đặc Trưng</a><a href="#thuong-thuc">Cách Thưởng Thức</a><a href="#so-sanh">So Sánh</a><a href="#bao-quan">Bảo Quản</a><a href="#faq">Hỏi Đáp (FAQ)</a><a href="#khac">Sản Phẩm Khác</a>
+  </nav>
+  <div class="hdr-actions">
+    <button class="btn ghost" data-contact="call">Hotline</button>
+    <button class="btn cart-btn" id="openCart" aria-label="Mở giỏ hàng">Giỏ hàng <i id="cartCount">0</i></button>
+    <button class="burger" id="burger" aria-label="Mở menu">☰</button>
+  </div>
+</header>
 
-    <header>
-        <a href="#" class="logo">🥥 DỪA DÒN THÀNH NHÂN</a>
-        <nav class="nav-links">
-            <a href="#gioi-thieu">Điểm Khác Biệt</a>
-            <a href="#san-pham">Sản Phẩm</a>
-            <a href="#lien-he">Đặt Hàng Sỉ & Lẻ</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>DỪA DÒN THÀNH NHÂN</h1>
-        <p>Tinh hoa quà Việt – Từng lát dừa vàng ươm, giòn rụm, giữ trọn vị ngọt thanh và hương thơm béo tự nhiên.</p>
-        <a href="tel:0905876567" class="btn-cta">📞 GỌI ĐẶT HÀNG: 0905 876 567</a>
-    </section>
-
-    <div class="container" id="gioi-thieu">
-        <h2 class="section-title">Vì Sao Chọn Dừa Dòn Thành Nhân?</h2>
-        <p class="section-subtitle">Chế biến tỉ mỉ từ những trái dừa tuyển chọn, mang đến món ăn vặt lành mạnh và đậm đà hương vị truyền thống.</p>
-        
-        <div class="features">
-            <div class="feature-box">
-                <h3>🥥 Nguyên Liệu Chọn Lọc</h3>
-                <p>Sử dụng cơm dừa tươi đủ độ già để đạt độ béo ngậy tự nhiên và cấu trúc giòn tan hoàn hảo sau khi sấy.</p>
-            </div>
-            <div class="feature-box">
-                <h3>🔥 Công Nghệ Sấy Giòn</h3>
-                <p>Nướng sấy ở nhiệt độ tiêu chuẩn giúp miếng dừa vàng đều, dậy mùi thơm đặc trưng mà không bị gắt dầu.</p>
-            </div>
-            <div class="feature-box">
-                <h3>🛡️ An Toàn & Tự Nhiên</h3>
-                <p>Không phẩm màu hóa học, không chất bảo quản độc hại, đảm bảo an toàn vệ sinh thực phẩm cho cả gia đình.</p>
-            </div>
-        </div>
-
-        <h2 class="section-title" id="san-pham">Sản Phẩm Nổi Bật</h2>
-        <p class="section-subtitle">Đa dạng quy cách đóng gói, phù hợp dùng hàng ngày, đãi khách hoặc làm quà biếu tặng ý nghĩa.</p>
-
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="1778065814837_1942917636061203901_4848677422044637954_f9b077a393212a99a2a4737285bff61f.jpg" alt="Dừa Dòn Truyền Thống">
-                <div class="product-info">
-                    <div>
-                        <h3>Dừa Dòn Truyền Thống</h3>
-                        <p>Lát dừa sấy giòn rụm nguyên bản, vị ngọt dịu nhẹ, nhâm nhi cùng trà nóng hoặc cà phê cực kỳ bắt vị.</p>
-                    </div>
-                    <div>
-                        <div class="price">Liên hệ: 0905 876 567</div>
-                        <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="padding: 10px 24px; font-size: 0.95rem;">Đặt Mua Qua Zalo</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="1778065814979_1942917636061203901_4848677422044637954_2b4d11b2f546d03458e22801d496332c.jpg" alt="Dừa Dòn Đóng Gói Tiện Lợi">
-                <div class="product-info">
-                    <div>
-                        <h3>Dừa Dòn Hũ / Túi Zip</h3>
-                        <p>Đóng gói kín hơi giúp giữ trọn độ giòn lâu dài, tiện lợi mang theo đi làm, du lịch hay dã ngoại.</p>
-                    </div>
-                    <div>
-                        <div class="price">Liên hệ: 0905 876 567</div>
-                        <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="padding: 10px 24px; font-size: 0.95rem;">Đặt Mua Qua Zalo</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="images.jfif" alt="Combo Quà Biếu Dừa Dòn Thành Nhân">
-                <div class="product-info">
-                    <div>
-                        <h3>Combo Quà Tặng & Sỉ Đại Lý</h3>
-                        <p>Tuyển đại lý, nhà phân phối và cung cấp số lượng lớn làm quà tặng doanh nghiệp, lễ Tết với chiết khấu cao.</p>
-                    </div>
-                    <div>
-                        <div class="price">Giá Sỉ Ưu Đãi</div>
-                        <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="padding: 10px 24px; font-size: 0.95rem;">Nhận Báo Giá Sỉ</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<main id="top">
+<section class="wrap hero">
+  <div class="gallery">
+    <div class="main-img" id="mainImg"><img id="bigImg" alt="Dừa Dòn Thành Nhân"></div>
+    <div class="thumbs" id="thumbs"></div>
+  </div>
+  <div class="info">
+    <p class="crumb">Trang chủ / Đặc Sản Quà Quê &amp; Món Ăn Vặt / Dừa Dòn Thành Nhân</p>
+    <p class="kicker">Thành Nhân • Đặc sản dừa sấy giòn truyền thống</p>
+    <h1>Dừa Dòn Thành Nhân – Giòn Rụm, Bùi Béo Từ Cơm Dừa Tuyển Chọn</h1>
+    <p class="price" id="price">32.000₫ – 60.000₫</p>
+    <p class="muted small">Giá tham khảo theo quy cách</p>
+    <dl class="spec">
+      <div><dt>Thương hiệu</dt><dd>Dừa Dòn Thành Nhân</dd></div>
+      <div><dt>Quy cách</dt><dd id="specW">Gói 250gr / Gói 500gr</dd></div>
+      <div><dt>Thành phần</dt><dd>Cơm dừa tự nhiên, đường</dd></div>
+      <div><dt>Kết cấu</dt><dd>Khô, giòn rụm</dd></div>
+      <div><dt>Hạn sử dụng</dt><dd>6 tháng kể từ ngày sản xuất</dd></div>
+      <div><dt>Bảo quản</dt><dd>Nơi khô ráo, thoáng mát; giữ kín miệng túi sau khi mở</dd></div>
+    </dl>
+    <div class="order">
+      <p class="lbl">Quy cách <span class="muted small" id="sku"></span></p>
+      <div class="variants" id="variants"></div>
+      <button class="link" id="clearVar">Xóa tùy chọn</button>
+      <div class="qtyrow">
+        <div class="qty"><button id="qMinus" aria-label="Giảm">−</button><input id="qty" value="1" inputmode="numeric" aria-label="Số lượng"><button id="qPlus" aria-label="Tăng">+</button></div>
+        <p>Tạm tính: <b id="subtotal">–</b></p>
+      </div>
+      <div class="cta">
+        <button class="btn primary" id="addCart">Thêm Vào Giỏ Hàng</button>
+        <button class="btn zalo" id="zaloNow">Đặt Ngay Qua Zalo</button>
+      </div>
     </div>
+    <ul class="badges"><li>Khô · Giòn Rụm</li><li>Ngọt Thanh · Bùi Béo</li><li>Ăn Ngay · Làm Topping</li></ul>
+  </div>
+</section>
 
-    <div class="container" id="lien-he">
-        <div class="contact-box">
-            <h2>Đặt Hàng & Hợp Tác Đại Lý</h2>
-            <p>Quý khách hàng có nhu cầu mua lẻ hoặc nhập sỉ số lượng lớn vui lòng liên hệ trực tiếp hoặc ghé tại cơ sở:</p>
-            <div class="address-highlight">
-                📍 Địa chỉ: 416/2 Nguyễn Trãi, Phường Nghĩa Lộ, TP. Quảng Ngãi
-            </div>
-            <div class="contact-buttons">
-                <a href="tel:0905876567" class="btn-cta" style="background: #ffffff; color: var(--primary);">📞 GỌI: 0905 876 567</a>
-                <a href="https://zalo.me/0905876567" target="_blank" class="btn-cta" style="background: #0068FF; color: #ffffff;">💬 ZALO: 0905 876 567</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=416/2+Nguyễn+Trãi,+Nghĩa+Lộ,+Quảng+Ngãi" target="_blank" class="btn-cta" style="background: var(--accent); color: #ffffff;">🗺️ XEM BẢN ĐỒ</a>
-            </div>
-        </div>
-    </div>
+<section class="wrap tabs">
+  <div class="tabbar"><button class="on" data-tab="t1">Mô tả chi tiết</button><button data-tab="t2">Thông tin bổ sung</button></div>
+  <div class="tabpane on" id="t1"><p>Dừa Dòn Thành Nhân là dừa sấy giòn truyền thống, làm từ cơm dừa chọn lọc và đường. Lát dừa mỏng, khô ráo, giòn tan, dùng ngay như món ăn vặt hoặc rắc lên chè, kem, sữa chua.</p></div>
+  <div class="tabpane" id="t2"><p>Trọng lượng: 250gr / 500gr. Hạn sử dụng 6 tháng. Địa chỉ cơ sở: <span data-cfg="address"></span>.</p></div>
+</section>
 
-    <div class="floating-contact">
-        <a href="https://zalo.me/0905876567" target="_blank" class="float-btn zalo">💬 Zalo: 0905.876.567</a>
-        <a href="tel:0905876567" class="float-btn">📞 Gọi: 0905.876.567</a>
-    </div>
+<section class="band" id="huong-vi"><div class="wrap">
+  <p class="kicker">Đặc trưng khi cắn</p><h2>Giòn Trước, Bùi Béo Sau</h2>
+  <div class="grid2">
+    <article class="card"><h3>Kết cấu – khô và giòn hơn cơm dừa tươi</h3><p>Sau khi sấy đúng nhiệt, từng lát dừa khô và giòn rõ rệt so với cơm dừa tươi hay mứt dừa mềm dẻo.</p></article>
+    <article class="card"><h3>Hương vị – bùi béo của dừa, nền vị ngọt</h3><p>Cơm dừa già vừa tới cho vị bùi béo đặc trưng, kết hợp lớp đường nhẹ nên ngọt hài hòa, không gắt cổ.</p></article>
+  </div>
+</div></section>
 
-    <footer>
-        <p><strong>THƯƠNG HIỆU DỪA DÒN THÀNH NHÂN</strong></p>
-        <p>📍 Địa chỉ: 416/2 Nguyễn Trãi, Nghĩa Lộ, Quảng Ngãi | 📞 Hotline / Zalo: 0905 876 567</p>
-        <p>&copy; 2026 Dừa Dòn Thành Nhân. Giữ trọn hương vị tự nhiên.</p>
-    </footer>
+<section class="wrap sec">
+  <h2>Nền Hương Vị &amp; Quy Trình Sấy</h2>
+  <div class="grid2">
+    <article class="card num" data-n="01"><h3>Cơm dừa chọn lọc</h3><p>Thành phần chính tạo lát dừa mỏng đều và vị bùi béo tự nhiên sau khi sấy.</p></article>
+    <article class="card num" data-n="02"><h3>Đường tinh khiết</h3><p>Bổ sung nền vị ngọt dịu để tôn nét thơm béo đặc trưng của cơm dừa.</p></article>
+  </div>
+  <p class="note">Sau khi sấy, miếng dừa khô ráo hoàn toàn, giòn tan, không ỉu; hợp nhâm nhi cùng trà nóng hoặc món tráng miệng.</p>
+</section>
 
+<section class="band"><div class="wrap">
+  <h2>Trải Nghiệm 3 Tầng Hương Vị</h2>
+  <div class="grid3">
+    <article class="card num" data-n="01"><h3>Giòn</h3><p>Cơm dừa sau khi sấy cho cảm giác khô giòn tan ngay khi cắn.</p></article>
+    <article class="card num" data-n="02"><h3>Bùi béo</h3><p>Hậu vị cơm dừa lan rõ hơn khi nhai kỹ từng miếng.</p></article>
+    <article class="card num" data-n="03"><h3>Ngọt dịu</h3><p>Lớp đường vừa vặn cân bằng với độ béo tự nhiên của dừa.</p></article>
+  </div>
+</div></section>
+
+<section class="wrap sec" id="thuong-thuc">
+  <h2>Không Chỉ Để Ăn Vặt: 2 Cách Thưởng Thức</h2>
+  <div class="grid2">
+    <article class="card num" data-n="01"><h3>Ăn trực tiếp nhâm nhi</h3><p>Mở gói dùng ngay: quà vặt giòn thơm cho gia đình, văn phòng, tiếp khách ngày lễ Tết.</p></article>
+    <article class="card num" data-n="02"><h3>Dùng làm topping đa năng</h3><p>Rắc lên chè, kem, sữa chua, sinh tố, trà sữa hoặc xôi để thêm độ giòn và vị bùi béo.</p></article>
+  </div>
+</section>
+
+<section class="band" id="so-sanh"><div class="wrap">
+  <h2>Dễ Phân Biệt Khi Chọn</h2>
+  <div class="grid2">
+    <article class="card hl"><h3>Dừa Dòn Thành Nhân (dừa sấy giòn)</h3><p>Làm khô đến khi giòn rụm, lát mỏng khô ráo, ít ngấy; vừa ăn vặt trực tiếp vừa làm topping.</p></article>
+    <article class="card"><h3>Mứt dừa truyền thống</h3><p>Thường mềm, ẩm hoặc dẻo, lớp đường dày hơn thay vì giòn khô.</p></article>
+  </div>
+</div></section>
+
+<section class="wrap sec" id="bao-quan">
+  <h2>Thông Số Kỹ Thuật &amp; Bảo Quản</h2>
+  <table class="tbl">
+    <tr><th>Sản phẩm</th><td>Dừa Dòn Thành Nhân</td></tr><tr><th>Thương hiệu</th><td>Thành Nhân</td></tr>
+    <tr><th>Xuất xứ</th><td data-cfg="address"></td></tr><tr><th>Thành phần</th><td>Cơm dừa, đường</td></tr>
+    <tr><th>Quy cách</th><td>Gói 250gr / Gói 500gr</td></tr><tr><th>Kết cấu</th><td>Giòn</td></tr>
+    <tr><th>Cách dùng</th><td>Ăn trực tiếp hoặc làm topping</td></tr><tr><th>Hạn sử dụng</th><td>6 tháng</td></tr>
+  </table>
+  <div class="callout"><b>Sau khi mở gói – giữ kín để hạn chế dừa bị mềm.</b> Bảo quản nơi khô ráo, thoáng mát; khóa kín túi zip, cột chặt miệng túi hoặc cho vào hũ kín để tránh không khí và độ ẩm.</div>
+</section>
+
+<section class="band" id="faq"><div class="wrap narrow">
+  <h2>Câu Hỏi Thường Gặp</h2>
+  <details><summary>Dừa Dòn Thành Nhân có giao hàng toàn quốc không?</summary><p>Có, giao toàn quốc qua các đơn vị vận chuyển uy tín.</p></details>
+  <details><summary>Thời gian giao hàng mất bao lâu?</summary><p>Nội tỉnh nhanh trong ngày; liên tỉnh từ 2–5 ngày tùy khu vực.</p></details>
+  <details><summary>Phí vận chuyển được tính như thế nào?</summary><p>Phí ship tạm tính 25.000₫/đơn; shop sẽ báo chính xác theo trọng lượng thực tế trước khi gửi.</p></details>
+  <details><summary>Tôi có thể kiểm tra hàng trước khi thanh toán không?</summary><p>Được. Bạn kiểm tra hàng đúng mô tả, nguyên vẹn rồi mới thanh toán.</p></details>
+  <details><summary>Shop gửi hàng qua những đơn vị vận chuyển nào?</summary><p>GHN, Viettel Post, J&amp;T Express...</p></details>
+  <details><summary>Tôi có thể thanh toán khi nhận hàng (COD) không?</summary><p>Hỗ trợ cả COD và chuyển khoản ngân hàng.</p></details>
+</div></section>
+
+<section class="wrap sec" id="khac">
+  <h2>Khám Phá Thêm Món Ngon Nhâm Nhi</h2>
+  <p class="muted small">Danh mục sản phẩm gợi ý mẫu – có thể bật/tắt hoặc sửa trong file <code>data/products.json</code>.</p>
+  <div class="filters"><input id="search" type="search" placeholder="Tìm sản phẩm..." aria-label="Tìm sản phẩm">
+    <button class="chip on" data-cat="all">Tất cả</button><button class="chip" data-cat="Món Giòn">Món Giòn</button><button class="chip" data-cat="Trái Cây Sấy">Trái Cây Sấy</button></div>
+  <div class="grid3" id="related"></div>
+</section>
+</main>
+
+<footer class="footer"><div class="wrap fgrid">
+  <div><h4>Dừa Dòn Thành Nhân</h4><p data-cfg="ownerName"></p><p data-cfg="address"></p><p>ĐT/Zalo: <span data-cfg="phone"></span></p><p>Email: <span data-cfg="email"></span></p></div>
+  <div><h4>Chính sách</h4><p>Giao hàng toàn quốc, phí tạm tính 25.000₫/đơn.</p><p>Kiểm tra hàng trước khi thanh toán.</p><p>Thông tin khách chỉ dùng để xử lý đơn hàng.</p></div>
+  <div><h4>Hướng dẫn đặt hàng</h4><p>Chọn quy cách, số lượng, bấm Đặt Ngay Qua Zalo hoặc thêm vào giỏ rồi gửi đơn.</p></div>
+</div><p class="copy">© Dừa Dòn Thành Nhân</p></footer>
+
+<div class="fab">
+  <button data-contact="call" aria-label="Gọi hotline">📞</button><button data-contact="zalo" aria-label="Chat Zalo">Z</button><button data-contact="fb" aria-label="Nhắn Facebook">f</button><button id="toTop" aria-label="Lên đầu trang">↑</button>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Giỏ hàng">
+  <div class="dh"><h3>Giỏ Đặt Hàng</h3><button id="closeCart" aria-label="Đóng">✕</button></div>
+  <div id="cartItems"></div>
+  <div class="sum"><p>Tạm tính <b id="cSub">0₫</b></p><p>Phí vận chuyển (tạm tính) <b id="cShip">0₫</b></p><p class="tot">Tổng cộng <b id="cTot">0₫</b></p></div>
+  <form id="orderForm">
+    <input name="name" placeholder="Họ tên" required><input name="phone" placeholder="Số điện thoại" inputmode="tel" required>
+    <input name="addr" placeholder="Địa chỉ nhận hàng" required><textarea name="note" rows="2" placeholder="Ghi chú (vd: giao giờ hành chính)"></textarea>
+    <button class="btn zalo" type="submit">Tạo Đơn &amp; Gửi Qua Zalo</button>
+    <button class="btn ghost" type="button" id="printOrder">In phiếu đơn hàng</button>
+  </form>
+</aside>
+
+<div class="modal" id="modal"><div class="mbox"><button class="mx" id="mClose" aria-label="Đóng">✕</button><div id="mBody"></div></div></div>
+<div class="modal" id="lightbox"><button class="lbn l" id="lbPrev" aria-label="Ảnh trước">‹</button><img id="lbImg" alt=""><button class="lbn r" id="lbNext" aria-label="Ảnh sau">›</button><button class="mx" id="lbClose" aria-label="Đóng">✕</button></div>
+<div class="toast" id="toast" role="status"></div>
+<div id="printArea"></div>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

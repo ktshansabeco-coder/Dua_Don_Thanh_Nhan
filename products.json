@@ -1,0 +1,24 @@
+{
+  "config": {
+    "brandName": "Dừa Dòn Thành Nhân",
+    "ownerName": "[TÊN CHỦ SỞ HỮU / ĐƠN VỊ]",
+    "phone": "0905876567",
+    "zalo": "0905876567",
+    "address": "416/2 Nguyễn Trãi, Nghĩa Lộ, Quảng Ngãi",
+    "email": "[EMAIL LIÊN HỆ]",
+    "facebookUrl": "[LINK FANPAGE FACEBOOK]",
+    "shipFee": 25000
+  },
+  "variants": [
+    { "id": "DD-250", "label": "Gói 250gr", "weight": "250gr", "price": 32000 },
+    { "id": "DD-500", "label": "Gói 500gr", "weight": "500gr", "price": 60000 }
+  ],
+  "related": [
+    { "id": "DD-500", "name": "Dừa Dòn Thành Nhân – Gói Tiết Kiệm 500gr", "cat": "Món Giòn", "price": 60000, "desc": "Gói lớn cho gia đình, quán chè, kem, sữa chua." },
+    { "id": "DD-250", "name": "Dừa Dòn Thành Nhân – Gói Tiện Lợi 250gr", "cat": "Món Giòn", "price": 32000, "desc": "Gói nhỏ vừa ăn, tiện biếu tặng và thử vị." },
+    { "id": "BDN", "name": "Bánh Dừa Nướng Giòn Thơm", "cat": "Món Giòn", "price": null, "desc": "Dữ liệu mẫu – liên hệ để biết giá." },
+    { "id": "BRG", "name": "Bắp Rang Giòn Mặn Ngọt Cay Nhẹ", "cat": "Món Giòn", "price": null, "desc": "Dữ liệu mẫu – liên hệ để biết giá." },
+    { "id": "KMS", "name": "Khoai Môn Sấy Giòn", "cat": "Món Giòn", "price": 55000, "desc": "Dữ liệu mẫu – có thể sửa giá." },
+    { "id": "CSD", "name": "Chuối Sấy Dẻo Nguyên Chất", "cat": "Trái Cây Sấy", "price": 25000, "desc": "Dữ liệu mẫu – có thể sửa giá." }
+  ]
+}
