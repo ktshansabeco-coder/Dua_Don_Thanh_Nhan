@@ -1,1 +1,115 @@
-
+{
+  "brand": {
+    "name": "Dừa Dòn Thành Nhân",
+    "tagline": "Thơm Béo Tự Nhiên - Giòn Tan Truyền Thống",
+    "description": "Đặc sản dừa sấy giòn truyền thống được chế biến từ cơm dừa tuyển chọn và đường cát nguyên chất. Cam kết 3 KHÔNG: Không chất bảo quản, không phẩm màu, không hương liệu hóa học.",
+    "phone": "0900.000.000",
+    "zalo": "0900000000",
+    "address": "Thành phố Quảng Ngãi, Tỉnh Quảng Ngãi",
+    "email": "lienhe@duadonthanhnhan.vn",
+    "shipping_fee": 25000,
+    "free_shipping_threshold": 300000
+  },
+  "products": [
+    {
+      "id": "dua-don-truyen-thong",
+      "name": "Dừa Dòn Truyền Thống Thành Nhân",
+      "badge": "Bán chạy nhất",
+      "short_desc": "Miếng dừa vàng ươm, giòn rụm, vị ngọt thanh vừa phải từ đường cát kết hợp vị béo bùi tự nhiên của cơm dừa già.",
+      "ingredients": "Cơm dừa tươi tuyển chọn (85%), đường cát trắng (15%).",
+      "expiry": "6 tháng kể từ ngày sản xuất (in trên bao bì).",
+      "storage": "Bảo quản nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp. Đóng kín miệng túi sau khi mở.",
+      "images": [
+        "https://images.unsplash.com/photo-1580984969071-a8da5656c2fb?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": "goi-250g",
+          "weight": "Gói 250gr",
+          "price": 32000,
+          "original_price": 38000,
+          "sku": "DDTN-250G",
+          "note": "Túi zip tiện lợi, thích hợp ăn vặt gia đình"
+        },
+        {
+          "id": "goi-500g",
+          "weight": "Gói 500gr (Tiết kiệm)",
+          "price": 60000,
+          "original_price": 68000,
+          "sku": "DDTN-500G",
+          "note": "Tiết kiệm 4.000đ - Thích hợp làm quà biếu"
+        }
+      ]
+    },
+    {
+      "id": "combo-gia-dinh",
+      "name": "Combo Thưởng Thức & Quà Biếu",
+      "badge": "Tiết kiệm",
+      "short_desc": "Trọn bộ sản phẩm Dừa Dòn Thành Nhân đóng gói chỉn chu, giòn ngon, rất thích hợp nhâm nhi cùng trà nóng hoặc biếu tặng người thân.",
+      "ingredients": "Cơm dừa tươi tuyển chọn (85%), đường cát trắng (15%).",
+      "expiry": "6 tháng kể từ ngày sản xuất.",
+      "storage": "Bảo quản nơi khô ráo, thoáng mát.",
+      "images": [
+        "https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": "combo-1kg",
+          "weight": "Combo 2 Gói 500gr (1Kg)",
+          "price": 115000,
+          "original_price": 128000,
+          "sku": "DDTN-CB1KG",
+          "note": "Tiết kiệm thêm 5.000đ so với mua lẻ"
+        },
+        {
+          "id": "combo-5goi-250g",
+          "weight": "Combo 5 Gói 250gr (1.25Kg)",
+          "price": 150000,
+          "original_price": 160000,
+          "sku": "DDTN-CB5G",
+          "note": "Chia sẻ dễ dàng cho văn phòng, hội nhóm"
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "icon": "🥥",
+      "title": "Nguyên Liệu Tự Nhiên",
+      "desc": "Chỉ sử dụng cơm dừa già đủ tuổi dày cơm, béo ngậy hòa quyện cùng đường cát tinh khiết."
+    },
+    {
+      "icon": "🔥",
+      "title": "Sấy Giòn Truyền Thống",
+      "desc": "Quy trình sấy chuẩn nhiệt độ giúp miếng dừa giòn rụm, vàng ươm mà không bị gắt dầu."
+    },
+    {
+      "icon": "🌿",
+      "title": "An Toàn Sức Khỏe",
+      "desc": "Cam kết không chất bảo quản, không phẩm màu nhân tạo, giữ trọn hương vị quê hương."
+    },
+    {
+      "icon": "🎁",
+      "title": "Đóng Gói Kín Đáo",
+      "desc": "Bao bì sạch đẹp, giữ độ giòn lâu, tiện lợi mang đi xa hoặc làm quà biếu tặng ý nghĩa."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Chị Minh Thư (Đà Nẵng)",
+      "rating": 5,
+      "comment": "Dừa giòn rụm, thơm mùi dừa tự nhiên chứ không bị ngọt gắt hay mùi hương liệu. Mua gói 500gr cả nhà ăn vèo cái hết!"
+    },
+    {
+      "name": "Anh Hoàng Nam (TP.HCM)",
+      "rating": 5,
+      "comment": "Món này uống kèm trà nóng buổi sáng hay chiều đều tuyệt vời. Đặt hàng qua Zalo shop tư vấn và gửi hàng rất nhanh."
+    },
+    {
+      "name": "Cô Thanh Thủy (Quảng Ngãi)",
+      "rating": 5,
+      "comment": "Lần nào có khách hay gửi quà vào Nam cho con cháu cô cũng mua vài ký Dừa Dòn Thành Nhân. Ai ăn cũng khen ngon."
+    }
+  ]
+}
